@@ -23,7 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Inserir um registro na tabela
     $sql = "INSERT INTO users (nome, email, senha) VALUES ('$name', '$email', '$password')";
     if ($conn->query($sql) === TRUE) {
-        echo "Registro inserido com sucesso!";
+        ?>
+         <div>Registro inserido com sucesso!</div>
+         <a style="" href="./index.php">Voltar para o Login.</a>
+        <?php
     } else {
         echo "Erro ao inserir o registro: " . $conn->error;
     }
